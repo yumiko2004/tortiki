@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style3.css">
+    <script src="js/main3.js" defer></script>
+    <title>Lab3_Form</title>
+</head>
+<body>
+    <div class="container">
+        <div id="form_container">
+            <form method="post" action="" id="form">
+                <p id="recall"><b>Нам важен ваш отзыв!</b></p>
+                <p>
+                    <label for="name"><b>Имя</b></label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Ваше имя">
+                </p>
+                <p>
+                    <label for="email"><b>Электронная почта</b></label>
+                    <br>
+                    <input type="text" name="name" id="email" placeholder="example@ex.ru">
+                </p>
+                <p>
+                    <label for="title"><b>Заголовок</b></label>
+                    <br>
+                    <input type="text" name="name" id="title" placeholder="Заголовок">
+                </p>
+                <p>
+                    <label for="comment"><b>Ваш отзыв</b></label>
+                    <br>
+                    <textarea name="comment" rows="10" id="comment"></textarea>
+                </p>
+                <p>
+                    <input type="button" name="sub" value="Отправить" id="sub" onClick="valid();">
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

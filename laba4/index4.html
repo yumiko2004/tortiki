@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Анкета</title>
+  <link rel="stylesheet" href="css/style4.css">
+  <script src="js/main4.js"></script>
+</head>
+<script>
+</script>
+<body>
+  <div class="form_main">
+    <p>Заполните анкету</p>
+  <form id="form1">
+    <label for="lastName">Фамилия:</label>
+    <input class='class-1' type="text" id="lastName" name="lastName" onchange="convertToUpperCase(this)" required>
+    <br>
+    <label for="firstName">Имя:</label>
+    <input class='class-1' type="text" id="firstName" name="firstName" onchange="convertToUpperCase(this)" required>
+    <br>
+    <label for="age">Возраст:</label>
+    <input class='class-1' type="number" id="age" name="age" required>
+    <br> 
+    <button class='button' type="button" onclick="submitForm()">Зарегистрировать карту</button>
+    <input class='button2' type="button" value="Очистить данные" onclick="resetForm()">
+  </form>
+  </div>
+</body>
+</html>

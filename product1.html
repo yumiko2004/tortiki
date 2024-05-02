@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Обзор товаров</title>
+  <link rel="stylesheet" type="text/css" href="product.css">
+</head>
+<body>
+  <div>
+    <h1>Карточка товара</h1>
+    <div class="card">
+      <img id="main-image" src="image/1.jpg">
+      <div class="more-images">
+        <img src="image/11.jpg" onmouseover="changeImage('image/11.jpg')" onmouseout="resetImage()">
+        
+      </div>
+      
+      <p>ID - 01</p>
+      <p>Название - Торт "Апельсиновый трюфель"</p>
+      <p>Цена - 1 350р.</p>
+      <p>Категория - Готовые торты</p>
+      <p>Состав - какао порошок, коньяк, ликер, масло подсолнечное, масло сливочное, сахар, сливки 35%, смесь бисквитная, шоколад темный кондитерский, яйцо, масло какао, глазурь армони, физалис, апельсин, вода, желатин листовой</p>
+      <p>Калорийность - 188 ккал./100 гр.</p>
+      <p>Вес - 660 гр.</p>
+      <div id="rating_bar">
+        <span id="rate_1">&#9734;</span>
+        <span id="rate_2">&#9734;</span>
+        <span id="rate_3">&#9734;</span>
+        <span id="rate_4">&#9734;</span>
+        <span id="rate_5">&#9734;</span>
+      </div>
+    </div>
+  </div>
+  <button onclick="goBack()" class="back-button">Назад</button>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function changeImage(imageUrl) {
+      document.getElementById('main-image').src = imageUrl;
+    }
+
+    function resetImage() {
+      document.getElementById('main-image').src = 'image/1.jpg';
+    }
+
+    let spans = document.getElementById("rating_bar").getElementsByTagName('span');
+
+    for (let i = 0; i < spans.length; i++) {
+      spans[i].onmouseover = hoverStar;
+    }
+
+    function hoverStar() {
+      for (let i = 0; i < this.id.charAt(5); i++) {
+        spans[i].innerText = '⭐️';
+      }
+
+      for (let i = this.id.charAt(5); i < 5; i++) {
+        spans[i].innerText = '✰';
+      }
+    }
+  </script>
+</body>
+</html>

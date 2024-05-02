@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Товары</title>
+        <link rel="stylesheet" type="text/css" href="1.css">
+    </head>
+    <body>
+        <div>
+            <h1>Товары</h1>
+            <div class="banner"></div>
+            <div id="gallery">
+                <a href="#" onclick="openFile()"><img id="image" src="image/0.jpg"></a>
+            </div>
+            <div class="button-container">
+                <button onclick="previousImage()" class="button">Назад</button>
+                <button onclick="nextImage()" class="button">Вперед</button>
+                <a href="laba1/tovary.xml"class="button">Список товаров</a>
+                <a href="laba4/index4.html" class="button">Форма для регистрации</a>
+                <a href="laba3/index.html" class="button">Форма для отзывов</a>
+                <button onclick="addToCart()" class="button">Добавить в корзину</button>
+            </div>    
+        </div>
+
+        <div>
+            <h2>Корзина товаров</h2>
+            <ul id="cart"></ul>
+            <p id="total"></p>
+        </div>
+
+        <script>
+            let i = 0;
+            let images = ["0", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
+            let files = ["product1.html", "product2.html", "product3.html","product4.html", "product5.html", "product6.html","product7.html", "product8.html", "product9.html","product10.html", "product11.html", "product12.html","product13.html", "product14.html", "product15.html","product16.html", "product17.html", "product18.html","product19.html", "product20.html"];
+            let prices = [1350, 2300, 1950, 1750, 1650, 1600, 2150, 1650, 3250, 1980, 2500, 1680, 1500, 3300, 3200, 2800, 1750, 2300, 3100, 3200];
+            let cart = [];
+
+            function previousImage() {
+                if (i === 0) {
+                    i = images.length - 1;
+                } else {
+                    i--;
+                }
+                document.getElementById("image").src = "image/" + images[i] + ".jpg";
+            }
+
+            function nextImage() {
+                if (i === images.length - 1) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+                document.getElementById("image").src = "image/" + images[i] + ".jpg";
+            }
+
+            function openFile() {
+                window.location.href = files[i];
+            }
+
+            function addToCart() {
+                let item = {
+                    image: "image/" + images[i] + ".jpg",
+                    price: prices[i]
+                };
+                cart.push(item);
+                updateCart();
+            }
+
+            function removeItem(index) {
+                cart.splice(index, 1); // Удаляем товар из массива cart
+                updateCart();
+            }
+
+            function updateCart() {
+                let cartElement = document.getElementById("cart");
+                let totalElement = document.getElementById("total");
+                cartElement.innerHTML = "";
+
+                let total = 0;
+
+                for (let j = 0; j < cart.length; j++) {
+                    let item = cart[j];
+                    let listItem = document.createElement("li");
+                    listItem.className = "cart-item";
+                    let imageElement = document.createElement("img");
+                    imageElement.src = item.image;
+                    imageElement.className = "cart-item-image";
+                    listItem.appendChild(imageElement);
+
+                    let priceElement = document.createElement("span");
+                    priceElement.innerHTML = "Цена: " + item.price;
+                    listItem.appendChild(priceElement);
+
+                    let removeButton = document.createElement("button");
+                    removeButton.innerHTML = "Удалить";
+
+                    removeButton.className = "button-remove";
+                    removeButton.onclick = function() {
+                        removeItem(j); // Вызываем функцию removeItem() с индексом товара
+                    };
+                    listItem.appendChild(removeButton);
+
+                    cartElement.appendChild(listItem);
+
+                    total += item.price;
+                }
+
+                totalElement.innerHTML = "Общая сумма: " + total;
+            }
+        </script>
+    </body>
+</html>

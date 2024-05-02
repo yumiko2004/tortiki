@@ -1,0 +1,17 @@
+ MAGAZIN
+{ display:block; margin:10px 20px 10px 20px; margin-top:12pt; border-style:double; border-color:#de89bcdd; font-size:15pt} 
+id
+{display:block; border-top:double; border-color:#de89bcdd; font-weight:bold;}
+NAME
+{display:block; text-align:center; color: #e71c96dd; border-top:double; border-color:#de89bcdd; 
+font-weight:bold;}
+book
+{ display:block; text-align:center; border-top:double; border-color:#de89bcdd} 
+price 
+{ display:block; text-align:center; border-top:double; border-color:#de89bcdd} 
+ves
+{ display:block; text-align:center; border-top:double; border-color:#de89bcdd} 
+sostav
+{ display:block; text-align:center; border-top:double; border-color:#de89bcdd} 
+kkal 
+{ display:block; text-align:center; border-top:double; border-color:#de89bcdd}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Карточка товара</title>
+  <link rel="stylesheet" type="text/css" href="product.css">
+</head>
+<body>
+  <div>
+    <h1>Карточка товара</h1>
+    <div class="card">
+      <img id="main-image" src="image/8.jpg">
+      <div class="more-images">
+        <img src="image/81.jpg" onmouseover="changeImage('image/81.jpg')" onmouseout="resetImage()">
+        
+      </div>
+      
+      <p>ID - 08</p>
+      <p>Название - Торт "Орео"</p>
+      <p>Цена - 1 650р.</p>
+      <p>Категория - Готовые торты</p>
+      <p>Состав - масло сливочное, молоко 3,2 %, мука в/с, сахар, сахарная пудра, сливки растительные, какао порошок, яйцо, шоколад белый кондитерский, шоколад тёмный кондитерский, масло подсолнечное, какао масло, разрыхлитель для теста, соль, крахмал кукурузный, вода, желатин листовой.
+      </p>
+      <p>Калорийтность - 341 ккал/100 гр.</p>
+      <p>Вес - 950 гр.</p>
+      <div id="rating_bar">
+        <span id="rate_1">&#9734;</span>
+        <span id="rate_2">&#9734;</span>
+        <span id="rate_3">&#9734;</span>
+        <span id="rate_4">&#9734;</span>
+        <span id="rate_5">&#9734;</span>
+      </div>
+    </div>
+  </div>
+    <button onclick="goBack()" class="back-button">Назад</button>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function changeImage(imageUrl) {
+      document.getElementById('main-image').src = imageUrl;
+    }
+
+    function resetImage() {
+      document.getElementById('main-image').src = 'image/8.jpg';
+    }
+
+
+    let spans = document.getElementById("rating_bar").getElementsByTagName('span');
+
+for (let i = 0; i < spans.length; i++) {
+  spans[i].onmouseover = hoverStar;
+}
+
+function hoverStar() {
+  for (let i = 0; i < this.id.charAt(5); i++) {
+    spans[i].innerText = '⭐️';
+  }
+
+  for (let i = this.id.charAt(5); i < 5; i++) {
+    spans[i].innerText = '✰';
+  }
+}
+  </script>
+</body>
+</html>

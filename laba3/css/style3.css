@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(220, 220, 220);
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+form {
+    background-color: rgb(248, 179, 209);
+    width: 250px;
+}
+
+#comment, #name, #email, #title, #recall,  label {
+    margin-left: 25px;
+    width: 190px !important;
+}
+#sub {
+    margin-left: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid;
+    border-color: rgb(190, 56, 114);
+    border-radius: 5px;
+    background-color: rgb(226, 93, 151);
+}
